@@ -1,11 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import { Navbar } from './components/navbar/Navbar';
 import { Layout } from './components/layout/Layout';
+import { NavButtons } from './components/NavButtons';
 
 function App() {
   return (
-    <Layout />
+    <Layout>
+      <NavButtons />
+    </Layout>
   );
 }
 
