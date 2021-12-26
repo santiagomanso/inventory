@@ -8,7 +8,7 @@ export const NavButtons = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='ml-0 sm:ml-36 mr-0 sm:mr-36 flex  justify-center flex-col sm:flex-row items-center'>
+        <div className='ml-0 sm:ml-36 mr-0 sm:mr-36 flex flex-col sm:flex-row justify-center items-center'>
             <div className='m-2 h-16 sm:h-64 w-3/4 sm:w-full bg-stone-200 rounded-lg'>
                 <button className='font-bold text-xl h-full w-full' onClick={()=>{navigate('./inbound-inventory')}}>Inbound Inventory</button>
             </div>
