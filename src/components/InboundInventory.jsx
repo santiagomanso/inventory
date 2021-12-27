@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Main } from './layout/Main'
 import { Modal } from './modal/Modal'
 
 export const InboundInventory = () => {
+
+    const [openModal, setOpenModal] = useState(false)
+
     return (
         <Main>
-        <Modal />            
-        {/* <div class="w-5/6 flex flex-col z-100">
+        
+        { openModal && <Modal closeModal= { setOpenModal }/> }            
+         <div class="w-5/6 flex flex-col z-100">
                 
                 <div className="self-center">
                     <h1 className='text-xl font-sm'>Inbound Inventory</h1>
@@ -26,7 +30,9 @@ export const InboundInventory = () => {
                     sm:w-3/4
                     mr-0 sm:mr-4
                     rounded-xl
-                    "/>
+                    "
+                    onClick={()=> setOpenModal(true)}
+                    />
 
                     
 
@@ -45,14 +51,15 @@ export const InboundInventory = () => {
                     <h2 className='font-semibold'>Search or scan a product to start</h2>
                 </div>
                 
-                <input type="button" value="Check in" className="
+                <input type="button" value="Check in" className={`
+                bottom-8 fixed ${openModal ?'hidden' :null} sm:hidden
                 bg-red-500 p-4 rounded-lg cursor-pointer
-                w-5/6 bottom-8 fixed sm:hidden
+                w-5/6 
                 text-white font-bold text-lg
-                "/>    
+                `}/>    
         </div>
            
-    */}
+    
         </Main>
         
     )

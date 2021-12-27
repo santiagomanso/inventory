@@ -1,7 +1,7 @@
 import React from 'react';
 import './modal.css';
 
-export const Modal = () => {
+export const Modal = ( {closeModal} ) => {
     return (
     <div className="h-screen bg-gray-500 z-1">
         <div className="
@@ -32,16 +32,18 @@ export const Modal = () => {
                 ">
 
                 <input type="button" value="Add to list" className="
-                    bg-green-400 p-4 rounded-lg mt-5
+                    bg-green-400 p-4 rounded-lg mt-5 cursor-pointer
                     w-1/3
                     text-slate-900 font-bold
                 "/>
 
                 <input type="button" value="Cancel search" className="
-                    bg-red-400 p-4 rounded-lg mt-5
+                    bg-red-400 p-4 rounded-lg mt-5 cursor-pointer
                     w-1/3
                     text-slate-900 font-bold
-                "/>
+                "
+                onClick={()=>{closeModal(false)}}
+                />
 
                 </div>
 
