@@ -48,11 +48,11 @@ export const InboundInventory = () => {
                 bg-white h-1/3 rounded-lg mt-10 text-center 
                 p-14 sm:p-40
                 ">
-                    <h2 className='font-semibold'>Search or scan a product to start</h2>
+                    <h2 className={`font-semibold ${openModal ?'hidden' :''}`}>Search or scan a product to start</h2>
                 </div>
                 
                 <input type="button" value="Check in" className={`
-                bottom-8 fixed ${openModal ?'hidden' :null} sm:hidden
+                bottom-8 fixed ${openModal ?'hidden' :''} sm:hidden
                 bg-red-500 p-4 rounded-lg cursor-pointer
                 w-5/6 
                 text-white font-bold text-lg
