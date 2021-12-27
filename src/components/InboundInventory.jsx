@@ -1,11 +1,12 @@
 import React from 'react'
 import { Main } from './layout/Main'
+import { Modal } from './modal/Modal'
 
 export const InboundInventory = () => {
     return (
         <Main>
-            
-        <div class="w-5/6 flex flex-col">
+        <Modal />            
+        {/* <div class="w-5/6 flex flex-col z-100">
                 
                 <div className="self-center">
                     <h1 className='text-xl font-sm'>Inbound Inventory</h1>
@@ -26,6 +27,9 @@ export const InboundInventory = () => {
                     mr-0 sm:mr-4
                     rounded-xl
                     "/>
+
+                    
+
                     <input type="button" value="Check in" className="
                     bg-slate-400 rounded-lg hidden sm:block
                     sm:w-40 mr-4
@@ -34,7 +38,10 @@ export const InboundInventory = () => {
                     
                 </div>
 
-                <div className="bg-white p-20 sm:p-28 h-1/3 rounded-lg mt-10 text-center">
+                <div className="
+                bg-white h-1/3 rounded-lg mt-10 text-center 
+                p-14 sm:p-40
+                ">
                     <h2 className='font-semibold'>Search or scan a product to start</h2>
                 </div>
                 
@@ -45,7 +52,7 @@ export const InboundInventory = () => {
                 "/>    
         </div>
            
-
+    */}
         </Main>
         
     )
