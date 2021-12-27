@@ -10,7 +10,7 @@ export const InboundInventory = () => {
         <Main>
         
         { openModal && <Modal closeModal= { setOpenModal }/> }            
-         <div class="w-5/6 flex flex-col z-100">
+         <div class={`font-semibold ${openModal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
                 
                 <div className="self-center">
                     <h1 className='text-xl font-sm'>Inbound Inventory</h1>
@@ -48,7 +48,7 @@ export const InboundInventory = () => {
                 bg-white h-1/3 rounded-lg mt-10 text-center 
                 p-14 sm:p-40
                 ">
-                    <h2 className={`font-semibold ${openModal ?'hidden' :''}`}>Search or scan a product to start</h2>
+                    <h2 className='font-semibold'>Search or scan a product to start</h2>
                 </div>
                 
                 <input type="button" value="Check in" className={`
