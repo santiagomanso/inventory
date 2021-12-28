@@ -20,7 +20,7 @@ export const InboundInventory = () => {
 
                 <div className="flex flex-col sm:flex-row mt-10 justify-stretch  ">
                     <input type="button" value="Scan mode: OFF" className="
-                    bg-slate-400 text-white cursor-pointer
+                    bg-green-800 text-white cursor-pointer
                       text-left rounded-lg
                       p-4
                       sm:max-w-40
@@ -37,7 +37,7 @@ export const InboundInventory = () => {
                     />
                     
                     <input type="button" value="Check in" className="
-                    bg-green-800 rounded-lg hidden sm:block
+                    bg-slate-400 rounded-lg hidden sm:block
                     sm:w-40 mr-4
                     text-white font-bold text-lg
                     " /> 
@@ -53,7 +53,7 @@ export const InboundInventory = () => {
                 
                 <input type="button" value="Check in" className={`
                 bottom-8 fixed ${openModal ?'hidden' :''} sm:hidden
-                bg-green-800 p-4 rounded-lg cursor-pointer
+                bg-slate-400 p-4 rounded-lg cursor-pointer
                 w-5/6 
                 text-white font-bold text-lg
                 `}/>    
