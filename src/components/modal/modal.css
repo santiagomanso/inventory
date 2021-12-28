@@ -1,3 +1,9 @@
 .test_modal {
-  height: calc(100% - 15rem);
+  height: 30rem;
+  max-height: 30rem;
+}
+
+.loop {
+  height: 28rem;
+  max-height: 28rem;
 }
