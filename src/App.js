@@ -8,23 +8,27 @@ import { InventoryCheck } from './components/InventoryCheck';
 import { OutOfStock } from './components/OutOfStock';
 import { StockList } from './components/StockList';
 import { Logs } from './components/Logs';
+import ItemState from './context/itemContext/ItemState';
+
 
 
 
 function App() {
   return (
     <Router>
-      <Layout>
-        <Routes>
-              <Route  path="/" element={ <NavButtons /> }/>
-              <Route path="/inbound-inventory" element={ <InboundInventory /> }/>
-              <Route path="/outbound-inventory" element={ <OutboundInventory /> }/>
-              <Route path="/inventory-check" element={ <InventoryCheck /> }/>
-              <Route path="/stock-list" element={ <StockList /> }/>
-              <Route path="/logs" element={ <Logs /> }/>
-              <Route path="/out-of-stock" element={ <OutOfStock /> }/>
-        </Routes>
-      </Layout>
+      <ItemState>
+          <Layout>
+            <Routes>
+                  <Route  path="/" element={ <NavButtons /> }/>
+                  <Route path="/inbound-inventory" element={ <InboundInventory /> }/>
+                  <Route path="/outbound-inventory" element={ <OutboundInventory /> }/>
+                  <Route path="/inventory-check" element={ <InventoryCheck /> }/>
+                  <Route path="/stock-list" element={ <StockList /> }/>
+                  <Route path="/logs" element={ <Logs /> }/>
+                  <Route path="/out-of-stock" element={ <OutOfStock /> }/>
+            </Routes>
+          </Layout>
+      </ItemState>
     </Router>
   );
 }

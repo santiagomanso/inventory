@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 import { Main } from './layout/Main'
 import { Modal } from './modal/Modal'
 
+
 export const InboundInventory = () => {
 
-    const [openModal, setOpenModal] = useState(false)
+    const [openModal, setOpenModal] = useState(false);
+    
 
     return (
         <Main>
-        
-        { openModal && <Modal closeModal= { setOpenModal }/> }            
+        { openModal && <Modal closeModal= { setOpenModal }/> }
+                    
          <div class={`font-semibold ${openModal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
                 
                 <div className="self-center">
@@ -33,9 +35,7 @@ export const InboundInventory = () => {
                     "
                     onClick={()=> setOpenModal(true)}
                     />
-
                     
-
                     <input type="button" value="Check in" className="
                     bg-slate-400 rounded-lg hidden sm:block
                     sm:w-40 mr-4
@@ -43,7 +43,7 @@ export const InboundInventory = () => {
                     " /> 
                     
                 </div>
-
+                
                 <div className="
                 bg-white h-1/3 rounded-lg mt-10 text-center 
                 p-14 sm:p-40
@@ -59,7 +59,7 @@ export const InboundInventory = () => {
                 `}/>    
         </div>
            
-    
+        
         </Main>
         
     )
