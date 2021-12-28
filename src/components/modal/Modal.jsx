@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { ItemContext } from '../../context/itemContext/ItemContext';
+import { SearchList } from '../SearchList';
 import './modal.css';
 
 export const Modal = ( {closeModal} ) => {
@@ -44,15 +45,7 @@ export const Modal = ( {closeModal} ) => {
                 border-2
                 "/>
                 <div className="test_modal">
-                    <div className="
-                    bg-white
-                    m-3 p-3                    
-                    flex flex-col
-                    h-full 
-                    rounded-md                    
-                    ">
-                    Testing modal
-                    </div>
+                    <SearchList />
                 </div>
 
                 <div className="
