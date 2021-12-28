@@ -12,7 +12,7 @@ export const InboundInventory = () => {
         <Main>
         { openModal && <Modal closeModal= { setOpenModal }/> }
                     
-         <div class={`font-semibold ${openModal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
+         <div className={`font-semibold ${openModal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
                 
                 <div className="self-center">
                     <h1 className='text-xl font-sm'>Inbound Inventory</h1>
@@ -37,7 +37,7 @@ export const InboundInventory = () => {
                     />
                     
                     <input type="button" value="Check in" className="
-                    bg-slate-400 rounded-lg hidden sm:block
+                    bg-green-800 rounded-lg hidden sm:block
                     sm:w-40 mr-4
                     text-white font-bold text-lg
                     " /> 
@@ -53,7 +53,7 @@ export const InboundInventory = () => {
                 
                 <input type="button" value="Check in" className={`
                 bottom-8 fixed ${openModal ?'hidden' :''} sm:hidden
-                bg-red-500 p-4 rounded-lg cursor-pointer
+                bg-green-800 p-4 rounded-lg cursor-pointer
                 w-5/6 
                 text-white font-bold text-lg
                 `}/>    
