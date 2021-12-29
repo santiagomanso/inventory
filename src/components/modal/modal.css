@@ -11,7 +11,7 @@
   max-height: 80vh;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 540px) {
   .test_modal {
     height: 25rem;
   }
