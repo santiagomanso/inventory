@@ -25,16 +25,16 @@ export const Modal = ( {closeModal} ) => {
     
     return (
 
-    <div className="h-screen bg-gray-500 z-1">
+    <div className="bg-gray-500 z-1 ">
         <div className="
-                
+                overflow-hidden
                 flex flex-row
                 justify-center items-center
                 fixed inset-0
                 bg-gray-300
                 
             ">
-            <div className="flex flex-col items-stretch flex-grow h-screen w-screen">
+            <div className="flex flex-col items-stretch flex-grow h-screen w-screen test">
                 <input
                 placeholder="Search name or SKU"
                 value= { inputSearch }

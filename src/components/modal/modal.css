@@ -1,19 +1,12 @@
+.test {
+  height: 100vh;
+}
+
 .test_modal {
-  height: calc(100% - 10rem);
+  height: 90vh;
 }
 
 .loop {
-  height: 40rem;
-  max-height: 38rem;
-}
-
-@media (max-width: 500px) {
-  .test_modal {
-    height: 25rem;
-  }
-
-  .loop {
-    height: 23rem;
-    max-height: 25rem;
-  }
+  height: 75vh;
+  max-height: 80vh;
 }
