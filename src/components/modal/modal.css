@@ -3,6 +3,6 @@
 }
 
 .loop {
-  height: 28rem;
-  max-height: 28rem;
+  height: calc(100% - 15rem);
+  height: calc(100% - 15rem);
 }
