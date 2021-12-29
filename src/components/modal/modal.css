@@ -3,15 +3,15 @@
 }
 
 .test_modal {
-  height: 90vh;
+  height: 75vh;
 }
 
 .loop {
-  height: 75vh;
+  height: 70vh;
   max-height: 80vh;
 }
 
-@media (max-width: 478px) {
+@media (max-width: 640px) {
   .test_modal {
     height: 25rem;
   }
