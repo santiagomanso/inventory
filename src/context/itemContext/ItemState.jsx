@@ -3,6 +3,7 @@ import ItemReducer from "./ItemReducer";
 import { ItemContext } from "./ItemContext";
 
 import { 
+    CLEAN_STATE_ITEMS,
     GET_ITEMS, 
     SEARCH_ITEMS 
 } from "../../types";
@@ -32,13 +33,21 @@ const ItemState = props => {
         });
     };
 
+    //clean every state
+    const cleanStates = ()=>{
+        dispatch({
+            type: CLEAN_STATE_ITEMS
+        })
+    }
+
     return (
         <ItemContext.Provider
             value={{
                 itemstate: state.itemstate,
                 itemresult: state.itemresult,
                 getItems,
-                searchItems
+                searchItems,
+                cleanStates
             }}
         >
             {props.children}

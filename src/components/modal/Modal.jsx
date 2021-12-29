@@ -7,22 +7,25 @@ export const Modal = ( {closeModal} ) => {
     
     //extract states and functions from context
     const itemsContext = useContext(ItemContext);
-    const { itemState, getItems, searchItems } = itemsContext;
-
-    //state handling inputs
-    const [inputSearch, setInputSearch] = useState('');
-
-    const handlerChange = (e)=> {
-        setInputSearch(e.target.value)
-        searchItems(inputSearch)
-    }
-
-
+    const { itemState, getItems, searchItems, cleanStates } = itemsContext;
+    
     //load products first time this component gets called
     useEffect(() => {
         getItems();
         // eslint-disable-next-line
     }, [itemState])
+
+    //state handling inputs
+    const [inputSearch, setInputSearch] = useState('');
+
+    const handlerChange = (e)=> {
+            setInputSearch(e.target.value)
+            searchItems(inputSearch)
+            
+    }
+
+
+    
     
     return (
 
@@ -67,7 +70,10 @@ export const Modal = ( {closeModal} ) => {
                     w-1/3
                     text-slate-900 font-bold
                 "
-                onClick={()=>{closeModal(false)}}
+                onClick={()=>{
+                    closeModal(false)
+                    cleanStates();
+                }}
                 />
 
                 </div>

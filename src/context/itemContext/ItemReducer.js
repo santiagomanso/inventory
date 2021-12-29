@@ -3,7 +3,8 @@ import {
     GET_ITEMS,
     SEARCH_ITEMS,
     DELETE_ITEMS,
-    ITEMS_ERROR 
+    ITEMS_ERROR,
+    CLEAN_STATE_ITEMS
 } from "../../types";
 
 
@@ -24,6 +25,12 @@ export default (state, action) => {
                 itemresult: state.itemstate.filter(item=> (item.name.match(action.payload) )  ?item :null ) 
             }
     
+        case CLEAN_STATE_ITEMS:
+            return{
+                itemstate: null,
+                itemresult: null
+            }
+
         case DELETE_ITEMS : 
             return {
                 ...state
