@@ -1,9 +1,10 @@
 import React from 'react'
+import { Main } from './layout/Main'
 
 export const InventoryCheck = () => {
     return (
-        <div>
+        <Main>
             <h1>Inventory Check</h1>
-        </div>
+        </Main>
     )
 }

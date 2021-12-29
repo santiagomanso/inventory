@@ -1,5 +1,6 @@
 import React from 'react'
 import './modal/modal.css'
+import { SearchItem } from './SearchItem'
 
 export const SearchList = () => {
     return (
@@ -11,95 +12,10 @@ export const SearchList = () => {
                     rounded-xl                    
                     ">
                       <div className="flex flex-row justify-start font-bold text-sm border-b-2 pb-3">
-                        <h2 className="mr-20">Picture</h2>
+                        <h2 className="mr-20 pl-3">Picture</h2>
                         <h2 className="">Title/SKU/Shelf</h2>
                       </div>
-
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className="py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className="py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className=" py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className=" py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className=" py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className=" py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
-                        <div className=" py-2 px-2">
-                          <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
-                        </div>
-                        <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold">Coca Cola Zero 0,33l</p>
-                          <div className="flex flex-row self-start"> 
-                            <p className="mr-3"> 11012025 </p>
-                            <p className="font-bold"> #007F </p>
-                          </div>
-                        </div>
-                      </div>
-
+                      <SearchItem />
                     </div>
     )
 }

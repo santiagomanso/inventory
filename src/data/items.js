@@ -1,6 +1,7 @@
 export const items =
 [
     {
+      id: 1,
       sku : 11015527,
       name: "Störtebeker Atlantik Ale alkfr. 0,5l",
       shelf_number: "#007C",
@@ -10,6 +11,7 @@ export const items =
       image: "https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11011916_202111110900.png",
     },
     {
+      id: 2,
       sku : 11015098,
       name: "Feine Welt Sommertrüffel 25g",
       shelf_number: "#069A",
@@ -19,6 +21,7 @@ export const items =
       image: "https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11015098_202111191700.png",
     },
     {
+      id: 3,
       sku : 11015003,
       name: "Doppelherz Vitamin D 2000 I.E. 45 Tbl.",
       shelf_number: "#054E",
@@ -28,6 +31,7 @@ export const items =
       image: "https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11015003_202110291830.png",
     },
     {
+      id: 4,
       sku : 11012518,
       name: "Pantene Pro-V Repair & Care Pflegespülung 200ml",
       shelf_number: "#054E",
@@ -37,6 +41,7 @@ export const items =
       image: "https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012518_202111110900.png",
     },
     {
+      id: 5,
       sku : 11011282,
       name: "Kinder Country 9er 211g",
       shelf_number: "#074G",
@@ -46,6 +51,7 @@ export const items =
       image: "https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012388_202111110900.png",
     },
     {
+      id: 6,
       sku : 11014990 ,
       name: "Sweet Family Feiner Zucker 1kg",
       shelf_number: "#029D",
@@ -55,6 +61,7 @@ export const items =
       image: "https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11011282_202111110900.png",
     },
     {
+      id: 7,
       sku : 11014990 ,
       name: "Feine Welt Kaltgeräuchertes Lachsrückenfilet 125g",
       shelf_number: "#011D",

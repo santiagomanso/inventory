@@ -20,7 +20,7 @@ export const InboundInventory = () => {
 
                 <div className="flex flex-col sm:flex-row mt-10 justify-stretch   ">
                     <input type="button" value="Scan mode: OFF" className="
-                    bg-green-800 text-white cursor-pointer
+                    bg-green-600 text-white cursor-pointer
                       text-left rounded-lg
                       p-4
                       sm:max-w-40

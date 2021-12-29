@@ -7,13 +7,14 @@ export const Modal = ( {closeModal} ) => {
     
     //extract states and functions from context
     const itemsContext = useContext(ItemContext);
-    const { itemState, getItems } = itemsContext;
+    const { itemState, getItems, searchItems } = itemsContext;
 
     //state handling inputs
     const [inputSearch, setInputSearch] = useState('');
 
     const handlerChange = (e)=> {
         setInputSearch(e.target.value)
+        searchItems(inputSearch)
     }
 
 
