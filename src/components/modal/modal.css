@@ -1,6 +1,5 @@
 .test_modal {
-  height: 30rem;
-  max-height: 30rem;
+  height: calc(100% - 15rem);
 }
 
 .loop {
