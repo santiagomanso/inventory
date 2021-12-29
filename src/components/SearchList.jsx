@@ -15,7 +15,7 @@ export const SearchList = () => {
                         <h2 className="">Title/SKU/Shelf</h2>
                       </div>
 
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className="py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
@@ -27,7 +27,7 @@ export const SearchList = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className="py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
@@ -39,7 +39,7 @@ export const SearchList = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className=" py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
@@ -51,7 +51,7 @@ export const SearchList = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className=" py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
@@ -63,7 +63,7 @@ export const SearchList = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className=" py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
@@ -75,7 +75,7 @@ export const SearchList = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className=" py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
@@ -87,7 +87,7 @@ export const SearchList = () => {
                           </div>
                         </div>
                       </div>
-                      <div className="flex flex-row justify-start ">
+                      <div className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
                         <div className=" py-2 px-2">
                           <img src="https://res.cloudinary.com/goflink/image/upload/w_600,h_800/de/products/1_11012025_202110271251.png" alt="Girl in a jacket" className="h-28 w-26" />
                         </div>
