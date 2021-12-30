@@ -6,13 +6,20 @@ export const SearchItem = () => {
 
     //extract states and functions from context
     const itemsContext = useContext(ItemContext);
-    const { itemresult } = itemsContext;
+    const { itemresult, selectItem } = itemsContext;
+
+    const pick_item = (item) =>{
+        selectItem(item);
+    }
 
     return (
         <>
         {  itemresult ? (
             itemresult.map(item=>  (
-                <div key={item.id} className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer">
+                <div key={item.name} className="flex flex-row justify-start border-b-2 bg-slate-100 hover:bg-slate-200 rounded-xl cursor-pointer"
+                              // recive an EVENT and i pass the item
+                onDoubleClick={ (e)=>  pick_item(item) }
+                >
             
                         <div className="py-2 px-2">
                           <img src={item.image} alt="Girl in a jacket" className="h-28 w-26" />

@@ -7,23 +7,25 @@ export const Modal = ( {closeModal} ) => {
     
     //extract states and functions from context
     const itemsContext = useContext(ItemContext);
-    const { itemState, getItems, searchItems, cleanStates } = itemsContext;
-    
-    //load products first time this component gets called
-    useEffect(() => {
-        getItems();
-        // eslint-disable-next-line
-    }, [itemState])
+    const {
+        //states
+        itemstate, itemresult, selecteditem, selecteditemlist,
+        
+         //functions
+         getItems, searchItems, cleanStates
+         } = itemsContext;
+
+
 
     //state handling inputs
     const [inputSearch, setInputSearch] = useState('');
 
     const handlerChange = (e)=> {
-            setInputSearch(e.target.value)
-            searchItems(inputSearch)
-            
+        setInputSearch(e.target.value)        
+        searchItems(inputSearch)             
     }
 
+    
 
     
     

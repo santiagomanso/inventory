@@ -4,7 +4,8 @@ import {
     SEARCH_ITEMS,
     DELETE_ITEMS,
     ITEMS_ERROR,
-    CLEAN_STATE_ITEMS
+    CLEAN_STATE,
+    SELECT_ITEM
 } from "../../types";
 
 
@@ -14,22 +15,27 @@ import {
 // eslint-disable-next-line
 export default (state, action) => {
     switch (action.type) {
-        case GET_ITEMS:
-            return {
-                ...state,
-                itemstate : items
-            }    
+            
         case SEARCH_ITEMS: 
             return {
+                //return a copy of every state
                 ...state,
-                itemresult: state.itemstate.filter(item=> (item.name.match(action.payload) )  ?item :null ) 
+                itemresult:   items.filter(item=> (item.name.match(action.payload) ) ?item  :null ) 
             }
-    
-        case CLEAN_STATE_ITEMS:
+     
+        case CLEAN_STATE:
             return{
+                ...state,
                 itemstate: null,
-                itemresult: null
+                itemresult: null,
+                selecteditem: null                
             }
+
+        case SELECT_ITEM : 
+        return{  
+            ...state,          
+            selecteditem: action.payload
+        }
 
         case DELETE_ITEMS : 
             return {
