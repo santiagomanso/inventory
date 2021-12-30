@@ -1,6 +1,5 @@
 import { items } from "../../data/items";
 import { 
-    GET_ITEMS,
     SEARCH_ITEMS,
     DELETE_ITEMS,
     ITEMS_ERROR,
@@ -15,16 +14,15 @@ import {
 // eslint-disable-next-line
 export default (state, action) => {
     switch (action.type) {
-            
         case SEARCH_ITEMS: 
-            return {
+        return {
                 //return a copy of every state
                 ...state,
                 itemresult:   items.filter(item=> (item.name.match(action.payload) ) ?item  :null ) 
             }
      
         case CLEAN_STATE:
-            return{
+        return{
                 ...state,
                 itemstate: null,
                 itemresult: null,
@@ -38,7 +36,7 @@ export default (state, action) => {
         }
 
         case DELETE_ITEMS : 
-            return {
+        return {
                 ...state
             }
 
@@ -46,7 +44,7 @@ export default (state, action) => {
         return {
             ...state
         }
-
+       
         default:
             return state;
     }

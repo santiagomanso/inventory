@@ -1,19 +1,25 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { ItemContext } from '../../context/itemContext/ItemContext';
+import { LogicContext } from '../../context/logicContext/LogicContext';
 import { SearchList } from '../SearchList';
 import './modal.css';
 
-export const Modal = ( {closeModal} ) => {
+export const Modal = () => {
     
-    //extract states and functions from context
+    //extract states and functions from logic context
+    const logicContext = useContext(LogicContext);
+    const  { toggleModal }  = logicContext;
+
+
+    //extract states and functions from item context
     const itemsContext = useContext(ItemContext);
     const {
-        //states
-        itemstate, itemresult, selecteditem, selecteditemlist,
-        
-         //functions
-         getItems, searchItems, cleanStates
-         } = itemsContext;
+    //states
+    
+    
+        //functions
+        searchItems, cleanStates
+        } = itemsContext;
 
 
 
@@ -25,7 +31,9 @@ export const Modal = ( {closeModal} ) => {
         searchItems(inputSearch)             
     }
 
-    
+    const handler_modal = (bol)=> {
+        toggleModal(bol);
+    }
 
     
     
@@ -73,7 +81,11 @@ export const Modal = ( {closeModal} ) => {
                     text-slate-900 font-bold
                 "
                 onClick={()=>{
-                    closeModal(false)
+                    //close modal
+                    
+                    handler_modal(false);
+
+                    //clean states
                     cleanStates();
                 }}
                 />

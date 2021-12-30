@@ -1,18 +1,26 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
+import { LogicContext } from '../context/logicContext/LogicContext';
 import { Main } from './layout/Main'
 import { Modal } from './modal/Modal'
 
 
 export const InboundInventory = () => {
 
-    const [openModal, setOpenModal] = useState(false);
+    //extract states from logic context
+    const logicContext = useContext(LogicContext);
+    const { togglemodal, toggleModal } = logicContext;
+
+    //togglemodal function
+    const toggle_modal = (bol) =>{
+        toggleModal(bol)
+    }
     
 
     return (
         <Main>
-        { openModal && <Modal closeModal= { setOpenModal }/> }
+        { togglemodal && <Modal /> }
                     
-         <div className={`font-semibold ${openModal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
+         <div className={`font-semibold ${togglemodal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
                 
                 <div className="self-center">
                     <h1 className='text-xl font-sm'>Inbound Inventory</h1>
@@ -33,7 +41,9 @@ export const InboundInventory = () => {
                     mr-0 sm:mr-4
                     rounded-xl
                     "
-                    onClick={()=> setOpenModal(true)}
+                    onClick={()=> {                        
+                        toggle_modal(true)
+                    }}
                     />
                     
                     <input type="button" value="Check in" className="
@@ -52,7 +62,7 @@ export const InboundInventory = () => {
                 </div>
                 
                 <input type="button" value="Check in" className={`
-                bottom-8 fixed ${openModal ?'hidden' :''} sm:hidden
+                bottom-8 fixed ${togglemodal ?'hidden' :''} sm:hidden
                 bg-slate-400 p-4 rounded-lg cursor-pointer
                 w-5/6 
                 text-white font-bold text-lg

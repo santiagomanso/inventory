@@ -1,3 +1,3 @@
-import { useContext } from "react";
+import { createContext } from "react";
 
-export const logicContext = createContext();
+export const LogicContext = createContext();

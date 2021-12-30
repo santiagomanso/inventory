@@ -1,23 +1,22 @@
 import React, { useReducer } from "react";
-import ItemReducer from "./ItemReducer";
-import { logicContext } from "./logicContext";
+import LogicReducer from "./LogicReducer";
+import { LogicContext } from "./LogicContext";
 
 import { 
-    GET_ITEMS, 
-    SEARCH_ITEMS, 
     TOGGLE_MODAL
 } from "../../types";
 
 
-const ItemState = props => {
+
+const LogicState = props => {
 
     //create and initialize states
     const initialState = {
-        togglemodal: null
+        togglemodal: false
     }
 
     //reducer hook that grabs a state and fires up a payload using the dispatch function.
-    const [state, dispatch] = useReducer(ItemReducer, initialState);
+    const [state, dispatch] = useReducer(LogicReducer, initialState);
 
     //functions
     const toggleModal = (data) =>{
@@ -29,16 +28,16 @@ const ItemState = props => {
     
 
     return (
-        <logicContext.Provider
+        <LogicContext.Provider
             value={{
                 togglemodal: state.togglemodal,
                 toggleModal
             }}
         >
             {props.children}
-        </logicContext.Provider>
+        </LogicContext.Provider>
     );
 
 }
 
-export default ItemState;
+export default LogicState;

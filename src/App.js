@@ -9,6 +9,9 @@ import { OutOfStock } from './components/OutOfStock';
 import { StockList } from './components/StockList';
 import { Logs } from './components/Logs';
 import ItemState from './context/itemContext/ItemState';
+import LogicState from './context/logicContext/LogicState';
+
+
 
 
 
@@ -17,6 +20,7 @@ function App() {
   return (
     <Router>
       <ItemState>
+        <LogicState>
           <Layout>
             <Routes>
                   <Route  path="/" element={ <NavButtons /> }/>
@@ -28,6 +32,7 @@ function App() {
                   <Route path="/out-of-stock" element={ <OutOfStock /> }/>
             </Routes>
           </Layout>
+        </LogicState>
       </ItemState>
     </Router>
   );
