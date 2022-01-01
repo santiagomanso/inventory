@@ -113,7 +113,7 @@ export const InboundInventory = () => {
                                     </div>
                             </div>
                         ))
-                        : <p className=' pt-14 sm:p-56'>Search or scan a product to start</p>
+                        : <p className=' p-0 sm:p-56'>Search or scan a product to start</p>
                     }
 
                 
