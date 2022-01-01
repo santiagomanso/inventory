@@ -8,23 +8,20 @@ export const SearchItem = () => {
     //extract logic states and functions from logic state
     const logicContext = useContext(LogicContext);
     const {
-      //states
-      togglemodal, 
+      //states     
       
       //functions
       toggleModal} = logicContext
-
-
 
 
     //extract states and functions from items context
     const itemsContext = useContext(ItemContext);
     const { 
       //states
-      itemresult, selecteditem1click, selecteditem2click,
+      itemresult, 
       
       //functions
-      addItemToList, selectItem1Click, selectItem2Click
+      addItemToList, selectItem1Click
     } = itemsContext;
 
     const handler_2_click = (item) =>{

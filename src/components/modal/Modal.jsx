@@ -19,7 +19,6 @@ export const Modal = () => {
     const {
         //states
         selecteditem1click,
-        selecteditem2click,
     
         //functions
         searchItems,
