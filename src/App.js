@@ -9,8 +9,7 @@ import { OutOfStock } from './components/OutOfStock';
 import { StockList } from './components/StockList';
 import { Logs } from './components/Logs';
 import ItemState from './context/itemContext/ItemState';
-import LogicState from './context/logicContext/LogicState';
-
+import LogicState from './context/logicContext/LogicStates';
 
 
 
