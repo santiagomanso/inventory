@@ -10,7 +10,7 @@ import {
 
 const LogicState = props => {
 
-    const netlify = 'trying something';
+    
 
     //create and initialize states
     const initialState = {
