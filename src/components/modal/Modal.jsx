@@ -8,17 +8,23 @@ export const Modal = () => {
     
     //extract states and functions from logic context
     const logicContext = useContext(LogicContext);
-    const  { toggleModal }  = logicContext;
+    const  {
+
+        //functions
+        toggleModal }  = logicContext;
 
 
     //extract states and functions from item context
     const itemsContext = useContext(ItemContext);
     const {
-    //states
-    
+        //states
+        selecteditem1click,
+        selecteditem2click,
     
         //functions
-        searchItems, cleanStates
+        searchItems,
+        cleanStates,
+        addItemToList
         } = itemsContext;
 
 
@@ -35,7 +41,10 @@ export const Modal = () => {
         toggleModal(bol);
     }
 
-    
+    const handler_add_to_list = () =>{
+        addItemToList(selecteditem1click)
+        toggleModal();
+    }
     
     return (
 
@@ -73,7 +82,9 @@ export const Modal = () => {
                     bg-neutral-400 p-4 rounded-lg mt-5 cursor-pointer
                     w-1/3
                     text-slate-900 font-bold
-                "/>
+                "
+                onClick={handler_add_to_list}
+                />
 
                 <input type="button" value="Cancel search" className="
                     bg-red-400 p-4 rounded-lg mt-5 cursor-pointer

@@ -3,8 +3,10 @@ import {
     SEARCH_ITEMS,
     DELETE_ITEMS,
     ITEMS_ERROR,
-    CLEAN_STATE,
-    SELECT_ITEM
+    CLEAN_ALL_STATES,
+    ADD_ITEM_TO_LIST,
+    SELECT_ITEM_1_CLICK,
+    SELECT_ITEM_2_CLICK
 } from "../../types";
 
 
@@ -21,19 +23,34 @@ export default (state, action) => {
                 itemresult:   items.filter(item=> (item.name.match(action.payload) ) ?item  :null ) 
             }
      
-        case CLEAN_STATE:
+        case CLEAN_ALL_STATES:
         return{
                 ...state,
                 itemstate: null,
                 itemresult: null,
-                selecteditem: null                
+                selecteditem1click: null,
+                selecteditem2click: null,
+                selecteditemlist: []
             }
 
-        case SELECT_ITEM : 
+        case ADD_ITEM_TO_LIST : 
         return{  
             ...state,          
-            selecteditem: action.payload
+            selecteditemlist: [action.payload, ...state.selecteditemlist, ]
+            
         }
+
+        case SELECT_ITEM_1_CLICK:
+            return{
+                ...state,
+                selecteditem1click : action.payload
+            }
+        
+        case SELECT_ITEM_2_CLICK:
+            return{
+                ...state,
+                selecteditem2click : action.payload
+            }
 
         case DELETE_ITEMS : 
         return {

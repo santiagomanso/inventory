@@ -6,6 +6,11 @@
   height: 75vh;
 }
 
+.loop_main {
+  height: 57vh;
+  max-height: 65vh;
+}
+
 .loop {
   height: 70vh;
   max-height: 80vh;

@@ -3,10 +3,12 @@ import ItemReducer from "./ItemReducer";
 import { ItemContext } from "./ItemContext";
 
 import { 
-    CLEAN_STATE,
+    CLEAN_ALL_STATES,
     GET_ITEMS, 
     SEARCH_ITEMS,
-    SELECT_ITEM
+    ADD_ITEM_TO_LIST,
+    SELECT_ITEM_1_CLICK,
+    SELECT_ITEM_2_CLICK
 } from "../../types";
 
 const ItemState = props => {
@@ -15,8 +17,9 @@ const ItemState = props => {
     const initialState = {
         itemstate: null,
         itemresult: null,
-        selecteditem: null,
-        selecteditemlist: null
+        selecteditem1click: null,
+        selecteditem2click: null,
+        selecteditemlist: []
     }
 
     //reducer hook that grabs a state and fires up a payload using the dispatch function.
@@ -30,13 +33,28 @@ const ItemState = props => {
     };
 
     //pick an item
-    const selectItem = (data) => {
+    const addItemToList = (data) => {
         dispatch({
-            type : SELECT_ITEM,
+            type : ADD_ITEM_TO_LIST,
             payload: data
         })
     }
 
+    const selectItem1Click = (data) =>{
+        dispatch({
+            type: SELECT_ITEM_1_CLICK,
+            payload: data
+        })
+    }
+
+    const selectItem2Click = (data) =>{
+        dispatch({
+            type: SELECT_ITEM_2_CLICK,
+            payload: data
+        })
+    }
+
+    
 
     const searchItems = (data) => {
         dispatch({            
@@ -46,26 +64,30 @@ const ItemState = props => {
     };
 
     //clean every state
-    const cleanStates = ()=>{
+    const cleanAllStates = ()=>{
         dispatch({
-            type: CLEAN_STATE
+            type: CLEAN_ALL_STATES
         })
     }
 
     return (
         <ItemContext.Provider
             value={{
+
                 //states
                 itemstate: state.itemstate,
                 itemresult: state.itemresult,
-                selecteditem: state.selecteditem,
+                selecteditem1click: state.selecteditem1click,
+                selecteditem2click: state.selecteditem2click,
                 selecteditemlist: state.selecteditemlist,
 
                 //functions
                 getItems,
                 searchItems,
-                cleanStates,
-                selectItem
+                cleanAllStates,
+                addItemToList,
+                selectItem1Click,
+                selectItem2Click
             }}
         >
             {props.children}

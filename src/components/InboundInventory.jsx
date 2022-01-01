@@ -1,10 +1,18 @@
 import React, { useContext } from 'react'
+import { ItemContext } from '../context/itemContext/ItemContext';
 import { LogicContext } from '../context/logicContext/LogicContext';
+
 import { Main } from './layout/Main'
 import { Modal } from './modal/Modal'
 
 
 export const InboundInventory = () => {
+
+    //extract states and functions from Item Context
+    const itemContext = useContext(ItemContext);
+    const { selecteditemlist } = itemContext
+
+
 
     //extract states from logic context
     const logicContext = useContext(LogicContext);
@@ -54,11 +62,39 @@ export const InboundInventory = () => {
                     
                 </div>
                 
-                <div className=" 
-                bg-white h-1/3 rounded-lg mt-10 text-center 
-                p-14 sm:p-40
-                ">
-                    <h2 className='font-semibold'>Search or scan a product to start</h2>
+                <div className={`
+                loop_main overflow-auto
+                bg-white rounded-xl mt-10 text-center 
+                {selecteditemlist ? p-14 sm:p-3  : p-14 sm:p-40}
+                `}>
+
+
+                    { selecteditemlist.length > 0
+                        ? selecteditemlist.map(item=>  (
+                            <div key={item.name} className={`
+                            mb-3
+                            flex flex-row justify-start border-b-2 
+                            bg-slate-50 hover:bg-slate-100 
+                            rounded-xl cursor-pointer`}
+                            >
+                        
+                                    <div className="py-2 px-2">
+                                      <img src={item.image} alt="Girl in a jacket" className="h-28 w-26" />
+                                    </div>
+                                    <div className="flex flex-col justify-center items-center "> 
+                                      <p className="font-bold"> {item.name} </p>
+                                      <div className="flex flex-row self-start"> 
+                                        <p className="mr-3"> {item.sku} </p>
+                                        <p className="font-bold"> {item.shelf_number} </p>
+                                      </div>
+                                    </div>
+                            </div>
+                        ))
+                        : <p className='p-56'>Search or scan a product to start</p>
+                    }
+
+                
+
                 </div>
                 
                 <input type="button" value="Check in" className={`
