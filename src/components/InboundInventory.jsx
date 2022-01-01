@@ -6,7 +6,7 @@ import { Main } from './layout/Main'
 import { Modal } from './modal/Modal'
 
 import './general.css'
-
+import './modal/modal.css'
 export const InboundInventory = () => {
 
     //extract states and functions from Item Context
@@ -113,7 +113,7 @@ export const InboundInventory = () => {
                                     </div>
                             </div>
                         ))
-                        : <p className=' sm:p-56'>Search or scan a product to start</p>
+                        : <p className=' pt-14 sm:p-56'>Search or scan a product to start</p>
                     }
 
                 
