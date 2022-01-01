@@ -68,7 +68,7 @@ export const InboundInventory = () => {
                 <div className={`
                 loop_main overflow-auto
                 bg-white rounded-xl mt-10 text-center 
-                {selecteditemlist ? p-0 sm:p-43  : p-14 sm:p-40}
+                {selecteditemlist ? p-0 sm:p-43  : p-0 sm:p-40}
                 `}>
 
 
