@@ -11,7 +11,6 @@ import {
 const LogicState = props => {
 
     
-
     //create and initialize states
     const initialState = {
         togglemodal: false
