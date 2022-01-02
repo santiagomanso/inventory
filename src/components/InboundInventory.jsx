@@ -141,8 +141,8 @@ export const InboundInventory = () => {
                   <input type="button" value="Check in" className={`
                   bottom-4 fixed ${togglemodal ?'hidden' :''}
                   sm:hidden bg-slate-400 rounded-lg cursor-pointer
-                  w-full h-12
-                  sm:w-5/6 
+                  w-5/6 h-12                  
+                  
                   text-white font-bold text-lg
                   `}/>
                 </div>
