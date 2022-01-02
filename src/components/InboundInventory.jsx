@@ -38,14 +38,14 @@ export const InboundInventory = () => {
                     '>Inbound Inventory</h1>
                 </div>
 
-                <div className="flex flex-col sm:flex-row mt-10 justify-stretch   ">
+                <div className="flex flex-col sm:flex-row mt-2 sm:mt-8 md:mt-14 justify-stretch   ">
                     <input type="button" value="Scan mode: OFF" className="
                     bg-green-600 text-white cursor-pointer
                       text-left font-semibold rounded-lg
                       p-4
                       sm:max-w-40
                       sm:mr-4
-                      mb-5 sm:mb-0
+                      mb-3 sm:mb-0
                     "/>
                     <input type="text" placeholder="Search name or SKU" className="
                     p-4 cursor-pointer
@@ -68,7 +68,7 @@ export const InboundInventory = () => {
                 
                 <div className={`
                 loop_main overflow-auto
-                bg-white rounded-xl mt-10 text-center 
+                bg-white rounded-xl mt-4 sm:mt-8 md:mt-14  text-center 
                 {selecteditemlist ? p-0 sm:p-43  : p-0 sm:p-40}
                 `}>
 
@@ -89,9 +89,9 @@ export const InboundInventory = () => {
                     { selecteditemlist.length > 0
                         ? selecteditemlist.map(item=>  (
                             <div key={item.name} className={`
-                            mb-3 justify-between  
+                            mb-5 sm:mb-10 md:mb-16 justify-between  
                             flex flex-row  border-b-2 
-                            bg-slate-50 hover:bg-slate-100 
+                            bg-neutral-100 hover:bg-pink-100 
                             rounded-xl `}
                             >
                         
@@ -115,15 +115,15 @@ export const InboundInventory = () => {
                                       </div>
                                       <div className='flex justify-around pb-2'>
                                         <div className='flex justify-center items-center'>
-                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
-                                        <button className="text-gray-500 px-2 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_shelf} </button>
-                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
+                                        <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_shelf} </button>
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
                                         </div>
 
                                         <div>
-                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
-                                        <button className="text-gray-500 px-2 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_backup} </button>
-                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
+                                        <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_backup} </button>
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
                                         </div>
                                                                                
                                       </div>
