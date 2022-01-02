@@ -8,6 +8,7 @@
 
 .loop_main {
   height: 41vh;
+  max-height: 55vh;
 }
 
 .loop {
@@ -23,5 +24,12 @@
   .loop {
     height: 23rem;
     max-height: 25rem;
+  }
+}
+
+@media (min-width: 1020px) {
+  .loop_main {
+    height: 55vh;
+    max-height: 60vh;
   }
 }
