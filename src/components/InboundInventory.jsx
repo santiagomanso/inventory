@@ -24,12 +24,13 @@ export const InboundInventory = () => {
         toggleModal(bol)
     }
     
+    
 
     return (
         <Main>
         { togglemodal && <Modal /> }
                     
-         <div className={`font-semibold ${togglemodal ?'hidden' :'w-5/6 flex flex-col z-100 '}`}>
+         <div className={`font-semibold ${togglemodal ?'hidden' :'  flex flex-col'}`}>
                 
                 <div className="self-center">
                     <h1 className='
@@ -88,32 +89,48 @@ export const InboundInventory = () => {
                     { selecteditemlist.length > 0
                         ? selecteditemlist.map(item=>  (
                             <div key={item.name} className={`
-                            mb-3
-                            flex flex-row justify-start border-b-2 
+                            mb-3 justify-between  
+                            flex flex-row  border-b-2 
                             bg-slate-50 hover:bg-slate-100 
-                            rounded-xl cursor-pointer`}
+                            rounded-xl `}
                             >
                         
-                                    <div className="py-2 px-2">
+                                    <div className=" pb-8 ">
                                       <img src={item.image} alt="Girl in a jacket" className="h-28 min-w-26" />
                                     </div>
                                     <div className="flex flex-col justify-center sm:items-center w-screen"> 
-                                      <div className='block mb-4'>
+                                      <div className='block'>
                                           <p className="probando"> {item.name} </p>
                                       </div>
-                                      <div className="flex justify-around"> 
-                                        <p className="mr-3 "> {item.sku} </p>
-                                        <p className="font-bold sm:mr-52"> {item.shelf_number} </p>
+                                      <div className="flex justify-center items-center"> 
+                                        <p className="mr-2 ">{item.sku} </p>
+                                        
+                                        <button className="
+                                        text-gray-500
+                                        px-1 py-1 ml-2 rounded-lg bg-slate-300 font-bold mr-2 sm:mr-52">Total Stock: {item.stock_total} </button>
                                       </div>
-                                      <div className='flex'>
-                                        <p className="font-bold sm:mr-52"> {item.stock_total} </p>
-                                        <p className="font-bold sm:mr-52"> {item.stock_shelf} </p>
-                                        <p className="font-bold"> {item.stock_backup} </p>
+                                      <div className='flex flex-row justify-around'>
+                                        <p>Shelf</p>
+                                        <p>Backup</p>
+                                      </div>
+                                      <div className='flex justify-around pb-2'>
+                                        <div className='flex justify-center items-center'>
+                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
+                                        <button className="text-gray-500 px-2 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_shelf} </button>
+                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
+                                        </div>
+
+                                        <div>
+                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
+                                        <button className="text-gray-500 px-2 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_backup} </button>
+                                        <button className="text-white px-2 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
+                                        </div>
+                                                                               
                                       </div>
                                     </div>
                             </div>
                         ))
-                        : <p className=' p-0 sm:p-56'>Search or scan a product to start</p>
+                        : <p className=' p-0 sm:p-38 md:p-46 lg:p-56'>Search or scan a product to start</p>
                     }
 
                 
@@ -123,7 +140,7 @@ export const InboundInventory = () => {
                 <input type="button" value="Check in" className={`
                 bottom-8 fixed ${togglemodal ?'hidden' :''} sm:hidden
                 bg-slate-400 p-4 rounded-lg cursor-pointer
-                w-5/6 
+                w-1/4 sm:w-5/6 
                 text-white font-bold text-lg
                 `}/>    
         </div>
