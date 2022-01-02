@@ -30,7 +30,7 @@ export const InboundInventory = () => {
         <Main>
         { togglemodal && <Modal /> }
                     
-         <div className={`font-semibold ${togglemodal ?'hidden' :'  flex flex-col'}`}>
+         <div className={`font-semibold ${togglemodal ?'hidden' :'  flex flex-col justify-center'}`}>
                 
                 <div className="self-center">
                     <h1 className='
@@ -140,7 +140,7 @@ export const InboundInventory = () => {
                 <input type="button" value="Check in" className={`
                 bottom-8 fixed ${togglemodal ?'hidden' :''} sm:hidden
                 bg-slate-400 p-4 rounded-lg cursor-pointer
-                w-1/4 sm:w-5/6 
+                self-center  w-screen sm:w-5/6 
                 text-white font-bold text-lg
                 `}/>    
         </div>
