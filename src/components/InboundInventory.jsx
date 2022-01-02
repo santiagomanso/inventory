@@ -139,9 +139,9 @@ export const InboundInventory = () => {
 
                 <div className='flex justify-center'>
                   <input type="button" value="Check in" className={`
-                  bottom-8 fixed ${togglemodal ?'hidden' :''}
+                  bottom-4 fixed ${togglemodal ?'hidden' :''}
                   sm:hidden bg-slate-400 rounded-lg cursor-pointer
-                  w-full h-9
+                  w-full h-12
                   sm:w-5/6 
                   text-white font-bold text-lg
                   `}/>
