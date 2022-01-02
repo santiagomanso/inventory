@@ -136,13 +136,16 @@ export const InboundInventory = () => {
                 
 
                 </div>
-                
-                <input type="button" value="Check in" className={`
-                bottom-8 fixed ${togglemodal ?'hidden' :''} sm:hidden
-                bg-slate-400 p-4 rounded-lg cursor-pointer
-                self-center  w-screen sm:w-5/6 
-                text-white font-bold text-lg
-                `}/>    
+
+                <div className='flex justify-center'>
+                  <input type="button" value="Check in" className={`
+                  bottom-8 fixed ${togglemodal ?'hidden' :''}
+                  sm:hidden bg-slate-400 rounded-lg cursor-pointer
+                  w-full h-9
+                  sm:w-5/6 
+                  text-white font-bold text-lg
+                  `}/>
+                </div>
         </div>
            
         
