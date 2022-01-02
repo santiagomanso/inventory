@@ -68,7 +68,7 @@ export const InboundInventory = () => {
                 
                 <div className={`
                 loop_main overflow-auto
-                bg-white rounded-xl mt-4 sm:mt-8 md:mt-14  text-center 
+                rounded-xl mt-4 sm:mt-8 md:mt-14  text-center 
                 {selecteditemlist ? p-0 sm:p-43  : p-0 sm:p-40}
                 `}>
 
@@ -110,8 +110,14 @@ export const InboundInventory = () => {
                                         px-1 py-1 ml-2 rounded-lg bg-slate-300 font-bold mr-2 sm:mr-52">Total Stock: {item.stock_total} </button>
                                       </div>
                                       <div className='flex flex-row justify-around'>
-                                        <p>Shelf</p>
-                                        <p>Backup</p>
+                                        <div className='flex'>
+                                          <p className='font-bold text-gray-700'>Shelf:</p>
+                                          <p>{item.shelf_number}</p>
+                                        </div>
+                                        <div className='flex'>
+                                          <p className='font-bold text-gray-700'>Backup Shelf:</p>
+                                          <p>{item.shelf_number_backup}</p>
+                                        </div>
                                       </div>
                                       <div className='flex justify-around pb-2'>
                                         <div className='flex justify-center items-center'>
