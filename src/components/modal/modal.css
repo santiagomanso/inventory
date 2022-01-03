@@ -27,7 +27,7 @@
   }
 }
 
-@media (min-width: 470px) {
+@media (min-width: 400px) {
   .loop_main {
     height: 65vh;
     max-height: 75vh;
