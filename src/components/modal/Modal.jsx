@@ -47,16 +47,16 @@ export const Modal = () => {
     
     return (
 
-    <div className="bg-gray-500 z-1 ">
+    <div className="">
         <div className="
                 overflow-hidden
                 flex flex-row
                 justify-center items-center
                 fixed inset-0
                 bg-gray-300
-                
+                md:px-10 lg:px-24
             ">
-            <div className="flex flex-col items-stretch flex-grow h-screen w-screen test">
+            <div className="flex flex-col items-stretch flex-grow h-screen w-screen">
                 <input
                 placeholder="Search name or SKU"
                 value= { inputSearch }
@@ -64,7 +64,7 @@ export const Modal = () => {
                 className="
                 py-4 pl-2 rounded-md
                 mt-5 mb-1 mr-3 ml-3
-                border-2
+                border-2 lg:text-xl
                 "/>
                 <div className="test_modal">
                     <SearchList />

@@ -38,7 +38,7 @@ export const SearchItem = () => {
         {  itemresult ? (
             itemresult.map(item=>  (
                 <div key={item.name} className={`flex flex-row justify-start border-b-2 
-                bg-slate-100 hover:bg-slate-200 
+                bg-slate-100 hover:bg-slate-200  text-sm sm:text-md md:text-lg
                 rounded-xl cursor-pointer`}
                               // recive an EVENT and i pass the item
                 onDoubleClick={ (e)=>  handler_2_click(item) }
@@ -46,10 +46,18 @@ export const SearchItem = () => {
                 >
             
                         <div className="py-2 px-2">
-                          <img src={item.image} alt="Girl in a jacket" className="h-28 w-26" />
+                          <img src={item.image} alt="Girl in a jacket" className="
+                          h-28 sm:h-32 md:h-36 lg:h-48 lg:w-40
+                          w-26 sm:h-32 md:w-34 lg:w-48 lg:w-40
+                          " />
                         </div>
                         <div className="flex flex-col justify-center items-center "> 
-                          <p className="font-bold"> {item.name} </p>
+                          <div className='hidden sm:flex flex-row'> 
+                            <p className='font-bold mr-2'>Name: </p>
+                            <p>{item.name}</p>
+                          </div>
+
+                          <p className='block sm:hidden'>{item.name}</p>
                           <div className="flex flex-row self-start"> 
                             <p className="mr-3"> {item.sku} </p>
                             <p className="font-bold"> {item.shelf_number} </p>

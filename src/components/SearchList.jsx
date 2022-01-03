@@ -11,7 +11,7 @@ export const SearchList = () => {
                     overflow-auto
                     rounded-xl                    
                     ">
-                      <div className="flex flex-row justify-start font-bold text-sm border-b-2 pb-3">
+                      <div className="flex flex-row justify-start font-bold text-sm md:text-lg border-b-2 pb-3">
                         <h2 className="mr-20 pl-3">Picture</h2>
                         <h2 className="">Title/SKU/Shelf</h2>
                       </div>

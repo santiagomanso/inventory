@@ -34,21 +34,21 @@ export const InboundInventory = () => {
                 
                 <div className="self-center">
                     <h1 className='
-                    text-xl font-sm
+                    text-xl md:text-xl font-sm
                     '>Inbound Inventory</h1>
                 </div>
 
                 <div className="flex flex-col sm:flex-row mt-2 sm:mt-8 md:mt-14 justify-stretch   ">
                     <input type="button" value="Scan mode: OFF" className="
                     bg-green-600 text-white cursor-pointer
-                      text-left font-semibold rounded-lg
+                      text-left md:text-lg font-semibold rounded-lg
                       p-4
                       sm:max-w-40
                       sm:mr-4
                       mb-3 sm:mb-0
                     "/>
                     <input type="text" placeholder="Search name or SKU" className="
-                    p-4 cursor-pointer
+                    p-4 cursor-pointer md:text-lg
                     sm:w-3/4
                     mr-0 sm:mr-4
                     rounded-xl
@@ -60,8 +60,8 @@ export const InboundInventory = () => {
                     
                     <input type="button" value="Check in" className="
                     bg-slate-400 rounded-lg hidden sm:block
-                    sm:w-40
-                    text-white font-bold text-lg
+                    sm:w-40 
+                    text-white font-bold text-lg md:text-lg
                     " /> 
                     
                 </div>
@@ -74,7 +74,9 @@ export const InboundInventory = () => {
 
 
                     { selecteditemlist.length > 0
-                        ? <div className="hidden sm:flex flex-row justify-between font-bold text-sm border-b-2 pb-3">
+                        ? <div className="
+                        font-xl
+                        hidden sm:flex flex-row justify-between font-bold text-sm border-b-2 pb-3">
                             <h2 className="self-start pl-3">Picture</h2>
                             <h2 className="">Title/SKU/Shelf</h2>
                             <h2 className="">Total Stock</h2>
@@ -136,7 +138,7 @@ export const InboundInventory = () => {
                                     </div>
                             </div>
                         ))
-                        : <p className='py-28 lg:py-56'>Search or scan a product to start</p>
+                        : <p className='py-28 md:py-48 lg:py-64 md:text-xl'>Search or scan a product to start</p>
                     }
 
                 
