@@ -118,15 +118,15 @@ export const InboundInventory = () => {
                                       </div>
                                       <div className='flex justify-around pb-2'>
                                         <div className='flex justify-center items-center'>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold  sm:mr-52">+</button> 
                                         <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_shelf} </button>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold mr-2 sm:mr-52">-</button>
                                         </div>
 
                                         <div>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  sm:mr-52">+</button> 
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold  sm:mr-52">+</button> 
                                         <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold"> {item.stock_backup} </button>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold mr-2 sm:mr-52">-</button>
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold mr-2 sm:mr-52">-</button>
                                         </div>
                                                                                
                                       </div>
@@ -150,18 +150,18 @@ export const InboundInventory = () => {
                                         </div>
                                         <div className='flex justify-around w-full text-lg mt-2'>
                                           <div className='flex flex-row'>
-                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">+</button> 
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold sm:text-xl lg:text-4xl">+</button> 
                                             <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold">Shelf { item.shelf_number } Stock {item.stock_shelf}  </button>
-                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">-</button>
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold sm:text-xl lg:text-4xl">-</button>
                                           </div>
                                           <button className="mr-2 ml-2
                                             text-gray-500
                                             px-5 py-1 sm:py-2 md:py-7 rounded-lg bg-slate-300 font-bold">Total Stock: {item.stock_total}
                                           </button>
                                           <div className='flex flex-row'>
-                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">+</button> 
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  hover:bg-yellow-400 sm:text-xl lg:text-4xl">+</button> 
                                             <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold">Backup {item.shelf_number_backup} Stock {item.stock_backup}  </button>
-                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">-</button>
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  hover:bg-yellow-400 sm:text-xl lg:text-4xl">-</button>
                                           </div>
                                         </div>
                                     </div>
