@@ -38,7 +38,7 @@ export const InboundInventory = () => {
                     '>Inbound Inventory</h1>
                 </div>
 
-                <div className="flex flex-col sm:flex-row mt-2 sm:mt-4 md:mt-8 justify-stretch   ">
+                <div className="flex flex-col sm:flex-row mt-2 sm:mt-4 justify-stretch   ">
                     <input type="button" value="Scan mode: OFF" className="
                       bg-green-600 text-white cursor-pointer
                       text-left md:text-lg font-semibold rounded-lg
@@ -67,8 +67,10 @@ export const InboundInventory = () => {
                 </div>
                 
                 <div className={`
+                py-0 sm:py-4
+                px-0 sm:px-4
                 loop_main overflow-auto                
-                rounded-xl mt-4 sm:mt-8 md:mt-14  text-center 
+                rounded-xl mt-4 sm:mt-8   text-center 
                 {selecteditemlist ? p-0 sm:p-43  : bg-white p-0 sm:p-40}
                 `}>
 
@@ -89,8 +91,8 @@ export const InboundInventory = () => {
                     { selecteditemlist.length > 0
                         ? selecteditemlist.map(item=>  (
                             <div key={item.name} className={`
-                            mt-2 sm:mt-4
-                            mb-5 sm:mb-4 md:mb-16 justify-between  
+                            mt-2
+                            justify-between  
                             flex flex-row border-b-2 
                             bg-neutral-100 hover:bg-pink-100 
                             rounded-xl `}
@@ -98,8 +100,8 @@ export const InboundInventory = () => {
                         
                             <div className="py-2 pl-2 shrink-0">
                             <img src={item.image} alt="Girl in a jacket" className="
-                            h-24 sm:h-32 lg:h-48 
-                            w-22 sm:h-32 lg:w-48 
+                            h-24 sm:h-32 lg:h-44 
+                            w-22 sm:h-32 lg:w-42 
                             " />
                           </div>
                                     <div className="flex flex-col sm:hidden justify-center sm:items-center w-screen"> 
