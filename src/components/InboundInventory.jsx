@@ -96,7 +96,7 @@ export const InboundInventory = () => {
                             rounded-xl `}
                             >
                         
-                            <div className="py-2 px-2 shrink-0">
+                            <div className="py-2 pl-2 shrink-0">
                             <img src={item.image} alt="Girl in a jacket" className="
                             h-28 sm:h-32 lg:h-48 
                             w-26 sm:h-32 lg:w-48 
