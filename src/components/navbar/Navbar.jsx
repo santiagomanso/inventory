@@ -19,7 +19,7 @@ export const Navbar = () => {
                 }}>
                 Home
             </button>
-            <h1 className='text-xl sm:text-4xl font-bold'>user.username</h1>
+            <h1 className='text-xl md:text-3xl font-bold'>user.username</h1>
             <span className='bg-gray-500 py-1 sm:py-4  px-2 sm:px-7  text-white rounded-lg font-bold'>Logout</span>
         </nav>
     )
