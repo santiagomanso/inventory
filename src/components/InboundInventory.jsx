@@ -75,24 +75,15 @@ export const InboundInventory = () => {
                 `}>
 
 
-                    { selecteditemlist.length > 0
-                        ? <div className="hidden sm:flex flex-row justify-between text-sm border-b-2 pb-3">
-                            <h2 className="text-lg px-2">Picture</h2>
-                            <h2 className="text-lg px-2">Title/SKU/Shelf</h2>
-                            <h2 className="text-lg px-2">Total Stock</h2>
-                            <h2 className="text-lg px-2">Shelf Stock</h2>
-                            <h2 className="text-lg px-2">Backup Stock</h2>
-                            <h2 className="text-lg px-2">Quantity Change</h2>
-                          </div>
-                        :  null
-                    }
+                    
 
                     {/* Print out Array of objects (ITEMS) needs more logic conditions (no duplicates, etc) */}
                     { selecteditemlist.length > 0
                         ? selecteditemlist.map(item=>  (
                             <div key={item.name} className={`
                             mt-2
-                            justify-between  
+                            mb-0 md:mb-7
+                            justify-start  
                             flex flex-row border-b-2 
                             bg-neutral-100 hover:bg-pink-100 
                             rounded-xl `}
@@ -139,6 +130,40 @@ export const InboundInventory = () => {
                                         </div>
                                                                                
                                       </div>
+                                    </div>
+
+                                    <div className='w-full
+                                    hidden sm:flex flex-col justify-center items-center
+                                    ml-14
+                                    '>
+                                        <div className='self-start'>
+                                          <div className='flex items-center'>
+                                            <p className='text-lg mr-1'>Name:</p>
+                                            <p className='text-lg'>{item.name}</p>                                        
+                                          </div>
+                                        </div>
+                                        <div className='self-start'>
+                                          <div className='flex items-center'>
+                                            <p className='text-lg mr-1'>SKU:</p>
+                                            <p className='text-lg'>{item.sku}</p>                                        
+                                          </div>
+                                        </div>
+                                        <div className='flex justify-around w-full text-lg mt-2'>
+                                          <div className='flex flex-row'>
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">+</button> 
+                                            <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold">Shelf { item.shelf_number } Stock {item.stock_shelf}  </button>
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">-</button>
+                                          </div>
+                                          <button className="mr-2 ml-2
+                                            text-gray-500
+                                            px-5 py-1 sm:py-2 md:py-7 rounded-lg bg-slate-300 font-bold">Total Stock: {item.stock_total}
+                                          </button>
+                                          <div className='flex flex-row'>
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">+</button> 
+                                            <button className="text-gray-500 px-3 py-2 rounded-lg bg-gray-200 font-bold">Backup {item.shelf_number_backup} Stock {item.stock_backup}  </button>
+                                            <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  ">-</button>
+                                          </div>
+                                        </div>
                                     </div>
                             </div>
                         ))
