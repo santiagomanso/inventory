@@ -98,8 +98,8 @@ export const InboundInventory = () => {
                         
                             <div className="py-2 pl-2 shrink-0">
                             <img src={item.image} alt="Girl in a jacket" className="
-                            h-28 sm:h-32 lg:h-48 
-                            w-26 sm:h-32 lg:w-48 
+                            h-24 sm:h-32 lg:h-48 
+                            w-22 sm:h-32 lg:w-48 
                             " />
                           </div>
                                     <div className="flex flex-col sm:hidden justify-center sm:items-center w-screen"> 
