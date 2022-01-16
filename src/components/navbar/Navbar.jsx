@@ -7,7 +7,7 @@ export const Navbar = () => {
 
     //extract states and functions from item context
     const itemContext = useContext(ItemContext);
-    const { cleanAllStates } = itemContext;
+    const { cleanAllStatesHome } = itemContext;
 
     const navigate = useNavigate();
     return (
@@ -15,7 +15,7 @@ export const Navbar = () => {
             <button className='bg-pink-400 py-1 sm:py-4 px-2 sm:px-7 text-white rounded-lg font-bold'
                 onClick={()=>{
                     navigate('../');
-                    cleanAllStates();
+                    cleanAllStatesHome();
                 }}>
                 Home
             </button>

@@ -4,6 +4,7 @@ import { LogicContext } from '../../context/logicContext/LogicContext';
 import { SearchList } from '../SearchList';
 import './modal.css';
 
+
 export const Modal = () => {
     
     //extract states and functions from logic context
@@ -19,10 +20,11 @@ export const Modal = () => {
     const {
         //states
         selecteditem1click,
+        
     
         //functions
         searchItems,
-        cleanStates,
+        cleanAllStates,
         addItemToList
         } = itemsContext;
 
@@ -31,9 +33,11 @@ export const Modal = () => {
     //state handling inputs
     const [inputSearch, setInputSearch] = useState('');
 
+    
+
     const handlerChange = (e)=> {
-        setInputSearch(e.target.value)        
-        searchItems(inputSearch)             
+        setInputSearch(e.target.value) 
+        searchItems(inputSearch)
     }
 
     const handler_modal = (bol)=> {
@@ -96,7 +100,7 @@ export const Modal = () => {
                     handler_modal(false);
 
                     //clean states
-                    cleanStates();
+                    cleanAllStates();
                 }}
                 />
 
