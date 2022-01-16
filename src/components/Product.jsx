@@ -10,7 +10,9 @@ export const Product = ({item}) => {
     const {name, sku, shelf_number, shelf_number_backup, image } = item;
     
     //save both stock from item into new state, that will not change in time, use them to compare and change colors when click button
+      //eslint-disable-next-line
     const [colorShelf, setColorShelf] = useState(item.stock_shelf)
+      //eslint-disable-next-line
     const [colorBackup, setColorBackup] = useState(item.stock_backup)
 
     //define context and extract states and functions
@@ -50,6 +52,7 @@ export const Product = ({item}) => {
 
       updateStock(item)
       setStock_total(stock_shelf + stock_backup)
+      //eslint-disable-next-line
     }, [stock_shelf, stock_backup])
 
     

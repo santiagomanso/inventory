@@ -24,6 +24,7 @@ export const InboundInventory = () => {
 
     useEffect(() => {
         createItemListCopy(selecteditemlist)
+        //eslint-disable-next-line
     }, [selecteditemlist])
 
     //extract states from logic context

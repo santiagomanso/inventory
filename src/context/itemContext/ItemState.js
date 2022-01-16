@@ -61,6 +61,7 @@ const ItemState = props => {
        /* console.log("ITEM id: ", item._id);
         console.log("OBJECT", stock) */
         
+            //eslint-disable-next-line
         const result = await axiosClient.put(`/api/products/${item._id}`, { params: item })
             .then((data)=> {
                 console.log(data);
@@ -113,6 +114,7 @@ const ItemState = props => {
         })
     }
 
+        //eslint-disable-next-line
     const updateItemListCopy = (data) =>{
         dispatch({
             type: UPDATE_ITEM_LIST_COPY,
