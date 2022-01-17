@@ -54,7 +54,7 @@ export const InboundInventory = () => {
                 </div>
 
                 <div className="flex flex-col sm:flex-row mt-2 sm:mt-4 justify-stretch   ">
-                    <input type="button" value="Scan mode: OFF" className="
+                    <input type="button" value="Scan mode: ON     " className="
                       bg-green-600 text-white cursor-pointer
                       text-left md:text-lg font-semibold rounded-lg
                       p-4
@@ -62,7 +62,7 @@ export const InboundInventory = () => {
                       sm:mr-4
                       mb-3 sm:mb-0
                     "/>
-                    <input type="text" placeholder="Search name or SKU" className="
+                    <input type="text" placeholder="Search SKU" className="
                       p-4 cursor-pointer md:text-lg
                       sm:w-3/4
                       mr-0 sm:mr-4
