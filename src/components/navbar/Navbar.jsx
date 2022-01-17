@@ -7,6 +7,8 @@ export const Navbar = () => {
 
     //extract states and functions from item context
     const itemContext = useContext(ItemContext);
+
+    //clean states but leaving some states that allows the rendering of the sku search results
     const { cleanAllStatesHome } = itemContext;
 
     const navigate = useNavigate();
