@@ -2,6 +2,7 @@ import React from 'react'
 import './modal/modal.css'
 import { SearchItem } from './SearchItem'
 
+//this component works as a header of titles to display the data retrived from the DB query
 export const SearchList = () => {
     return (
         <div className=" loop

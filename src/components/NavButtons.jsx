@@ -1,8 +1,8 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom' //this function gets a callback on the onClick event and the argument is the Route compoennt
 
 
-
+//i still need to read more on flex-wrap to make the buttons break line and go down, i couln't figure out how to implement it propperly
 export const NavButtons = () => {
 
     const navigate = useNavigate();

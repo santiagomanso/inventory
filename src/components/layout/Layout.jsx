@@ -5,7 +5,7 @@ export const Layout = ({children}) => {
     return (
         <div className='h-screen bg-gray-100 flex flex-col'>
             <Navbar />
-            {children}
+            {children} {/* The children is ROUTES, that envolves <NavButton /> */}
         </div>
     )
 }

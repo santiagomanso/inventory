@@ -1,3 +1,4 @@
+//imports
 import './App.css';
 import { Layout } from './components/layout/Layout';
 import { NavButtons } from './components/NavButtons';
@@ -16,11 +17,11 @@ import LogicState from './context/logicContext/LogicStates';
 
 
 function App() {
-
+  //router envoles the app, giving the functionality of navigation
   
-
   return (
     <Router>
+      {/*States envoles the app, providing STATES and FUNCTIONS that */}
       <ItemState>
         <LogicState>
           <Layout>

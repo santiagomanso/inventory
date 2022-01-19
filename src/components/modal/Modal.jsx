@@ -10,7 +10,6 @@ export const Modal = () => {
     //extract states and functions from logic context
     const logicContext = useContext(LogicContext);
     const  {
-
         //functions
         toggleModal }  = logicContext;
 
@@ -28,8 +27,6 @@ export const Modal = () => {
         addItemToList
         } = itemsContext;
 
-
-
     //state handling inputs
     const [inputSearch, setInputSearch] = useState('');
 
@@ -44,6 +41,7 @@ export const Modal = () => {
         toggleModal(bol);
     }
 
+    //this funcion is on this component because the button add to list is here, the double click event is on the SearchItemProduct component
     const handler_add_to_list = () =>{
         addItemToList(selecteditem1click)
         toggleModal();

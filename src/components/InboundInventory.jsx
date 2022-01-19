@@ -8,6 +8,8 @@ import { Modal } from './modal/Modal'
 import './general.css'
 import './modal/modal.css'
 import { Product } from './Product';
+
+
 export const InboundInventory = () => {
 
     //extract states and functions from Item Context
@@ -22,6 +24,7 @@ export const InboundInventory = () => {
         updateStock
      } = itemContext
 
+    //this hook works like an event listener that's gonna watch over a change in the state of selecteditemlist and fire up a funcion
     useEffect(() => {
         createItemListCopy(selecteditemlist)
         //eslint-disable-next-line
