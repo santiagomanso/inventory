@@ -2,8 +2,6 @@ import React, { useContext, useEffect, useState } from 'react'
 import { ItemContext } from '../context/itemContext/ItemContext';
 
 
-
-
 export const Product = ({item}) => {
     
     //destructuring variables from OBJECT, except for stock values (empiric test)
