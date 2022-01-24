@@ -24,7 +24,7 @@ export const Product = ({item}) => {
     const [colorBackupLetter, setColorBackupLetter] = useState(item.shelf_number_backup_letter)
     const [colorBackupNumber, setColorBackupNumber] = useState(item.shelf_number_backup_number);
 
-
+    //these states are used to store the LETTER and NUMBER for further comparisson and color changing
     const [backupLetter, setBackupLetter] = useState(item.shelf_number_backup_letter);
     const [backupNumber, setBackupNumber] = useState(item.shelf_number_backup_number);
 
@@ -41,6 +41,7 @@ export const Product = ({item}) => {
     const [clickSelectNumber, setClickSelectNumber] = useState(false);
     
 
+    //this hook listen for any changes in the dependencies (array ob states) and then fires up the following code.
     useEffect(() => {
 
 
@@ -59,7 +60,7 @@ export const Product = ({item}) => {
       if (item.shelf_number_backup_number !== colorBackupNumber)
       {setClickSelectNumber(true)} else {setClickSelectNumber(false)} 
             
-        //change colors of buttons
+      //change colors of buttons
       if (stock_backup !== colorBackup )
       { setClickBackup(true)} else { setClickBackup(false) }     
 
@@ -212,7 +213,7 @@ export const Product = ({item}) => {
                                             onClick={()=> handleClickBackup("add") }>+</button> 
                                           
                                             <button className={` px-3 py-2 rounded-lg
-                                            ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> Backstock {item.stock_backup}  shelf: #</button>
+                                            ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> stock Backup {item.stock_backup}  shelf: #</button>
                                           
                                             <select onChange={(e)=> HandlerChangeLetter(e)}   value={backupLetter}
                                               className={`text-2xl px-4 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
