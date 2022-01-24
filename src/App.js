@@ -11,6 +11,7 @@ import { StockList } from './components/StockList';
 import { Logs } from './components/Logs';
 import ItemState from './context/itemContext/ItemState';
 import LogicState from './context/logicContext/LogicStates';
+import { BackupShelfs } from './components/backupshelfs/BackupShelfs';
 
 
 
@@ -30,6 +31,7 @@ function App() {
                   <Route path="/inbound-inventory" element={ <InboundInventory /> }/>
                   <Route path="/outbound-inventory" element={ <OutboundInventory /> }/>
                   <Route path="/inventory-check" element={ <InventoryCheck /> }/>
+                  <Route path="/backup-shelfs" element={ <BackupShelfs /> }/>
                   <Route path="/stock-list" element={ <StockList /> }/>
                   <Route path="/logs" element={ <Logs /> }/>
                   <Route path="/out-of-stock" element={ <OutOfStock /> }/>

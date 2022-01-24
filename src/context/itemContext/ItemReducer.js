@@ -9,7 +9,8 @@ import {
     SELECT_ITEM_2_CLICK,
     CREATE_ITEM_LIST_COPY,
     SET_SKU,
-    OBJECT_UPDATE
+    OBJECT_UPDATE,
+    CREATE_BACKUP_SHELF
 } from "../../types";
 
 
@@ -92,7 +93,9 @@ export default (state, action) => {
             } 
             
             
-         
+        case CREATE_BACKUP_SHELF:
+            console.log(action.payload);
+            
                 
             
         case DELETE_ITEMS : 

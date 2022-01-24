@@ -14,5 +14,7 @@ export const SET_SKU = 'SET_SKU';
 
 export const OBJECT_UPDATE = 'OBJECT_UPDATE';
 
+export const CREATE_BACKUP_SHELF = 'CREATE_BACKUP_SHELF';
+
 //general purpose types
 export const TOGGLE_MODAL = 'TOGGLE_MODAL';

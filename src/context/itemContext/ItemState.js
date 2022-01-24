@@ -12,7 +12,8 @@ import {
     CREATE_ITEM_LIST_COPY,
     UPDATE_ITEM_LIST_COPY,
     OBJECT_UPDATE,
-    SET_SKU
+    SET_SKU,
+    CREATE_BACKUP_SHELF
 } from "../../types";
 import axiosClient from "../../config/axios";
 
@@ -62,8 +63,8 @@ const ItemState = props => {
         console.log("OBJECT", stock) */
         
             //eslint-disable-next-line
-        const result = await axiosClient.put(`/api/products/${item._id}`, { params: item })
-            .then((data)=> {
+        await axiosClient.put(`/api/products/${item._id}`, { params: item })
+            /*.then((data)=> {
                 console.log(data);
             })
             .catch((err)=> {
@@ -144,6 +145,22 @@ const ItemState = props => {
         })
     }
 
+    const createBackupShelf = async (backupShelf) => {
+        //console.log("FROM ITEM STATE", backupShelf);
+
+        try {
+            const shelf_number_backup = backupShelf;
+            console.log('Item State shelf_number_backup: ', shelf_number_backup);
+            await axiosClient.post('/api/shelfbackup', shelf_number_backup)
+        } catch (error) {
+            
+        }
+
+        /*dispatch({
+            type: CREATE_BACKUP_SHELF,
+            payload: backupShelf
+        })*/
+    }
 
     return (
         <ItemContext.Provider
@@ -169,7 +186,8 @@ const ItemState = props => {
                 selectItem2Click,
                 createItemListCopy,
                 updateObject,
-                setSku
+                setSku,
+                createBackupShelf
             }}
         >
             {props.children}

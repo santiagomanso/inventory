@@ -3,25 +3,31 @@ import { ItemContext } from '../context/itemContext/ItemContext';
 
 
 export const Product = ({item}) => {
-    
+
+    //define context and extract states and functions
+    const itemContext = useContext(ItemContext)
+    const { 
+      //states
+        
+      //functions
+      updateStock
+    } = itemContext;
+
     //destructuring variables from OBJECT, except for stock values (empiric test)
-    const {name, sku, shelf_number, shelf_number_backup, image } = item;
+    const {name, sku, shelf_number, image } = item;
     
     //save both stock from item into new state, that will not change in time, use them to compare and change colors when click button
       //eslint-disable-next-line
     const [colorShelf, setColorShelf] = useState(item.stock_shelf)
       //eslint-disable-next-line
     const [colorBackup, setColorBackup] = useState(item.stock_backup)
+    const [colorBackupLetter, setColorBackupLetter] = useState(item.shelf_number_backup_letter)
+    const [colorBackupNumber, setColorBackupNumber] = useState(item.shelf_number_backup_number);
 
-    //define context and extract states and functions
-    const itemContext = useContext(ItemContext)
-    const { 
-      //states
-      
-      
-      //functions
-      updateStock
-    } = itemContext;
+
+    const [backupLetter, setBackupLetter] = useState(item.shelf_number_backup_letter);
+    const [backupNumber, setBackupNumber] = useState(item.shelf_number_backup_number);
+
 
     //internal states to manage the change of stock (new stock)
     const [stock_shelf, setstock_shelf] = useState(item.stock_shelf)
@@ -31,19 +37,28 @@ export const Product = ({item}) => {
     //internal states that helps to change the color of buttons when stock change
     const [clickShelf, setClickShelf] = useState(false);
     const [clickBackup, setClickBackup] = useState(false);
+    const [clickSelectLetter, setClickSelectLetter] = useState(false);
+    const [clickSelectNumber, setClickSelectNumber] = useState(false);
     
 
     useEffect(() => {
-      //updateObject( {stock_shelf, stock_backup} )   
+
 
       item.stock_shelf = stock_shelf;
       item.stock_backup = stock_backup;
-      
+      item.shelf_number_backup_letter = backupLetter;
+      item.shelf_number_backup_number = backupNumber;
 
       //change colors of buttons
       if (stock_shelf !== colorShelf )
-        { setClickShelf(true)} else { setClickShelf(false) }     
+        { setClickShelf(true)} else { setClickShelf(false) }  
+        
+      if (item.shelf_number_backup_letter !== colorBackupLetter)
+        {setClickSelectLetter(true)} else {setClickSelectLetter(false)} 
 
+      if (item.shelf_number_backup_number !== colorBackupNumber)
+      {setClickSelectNumber(true)} else {setClickSelectNumber(false)} 
+            
         //change colors of buttons
       if (stock_backup !== colorBackup )
       { setClickBackup(true)} else { setClickBackup(false) }     
@@ -51,7 +66,7 @@ export const Product = ({item}) => {
       updateStock(item)
       setStock_total(stock_shelf + stock_backup)
       //eslint-disable-next-line
-    }, [stock_shelf, stock_backup])
+    }, [stock_shelf, stock_backup, backupLetter, backupNumber])
 
     
 
@@ -72,7 +87,16 @@ export const Product = ({item}) => {
          {setstock_backup(stock_backup-1)}
        }  
 
-      
+       const HandlerChangeLetter = (e)=>{
+         setBackupLetter(e.target.value);
+       }
+
+       const HandlerChangeNumber = (e)=>{
+        setBackupNumber(e.target.value);
+      }
+
+
+
     return (
         <div className={`
                             mt-2
@@ -108,8 +132,7 @@ export const Product = ({item}) => {
                                           <p>{shelf_number}</p>
                                         </div>
                                         <div className='flex'>
-                                          <p className='font-bold text-gray-700'>Backup Shelf:</p>
-                                          <p>{shelf_number_backup}</p>
+                                          <p className='font-bold text-gray-700'>Backup Shelf</p>
                                         </div>
                                       </div>
                                       <div className='flex justify-around pb-2'>
@@ -127,6 +150,23 @@ export const Product = ({item}) => {
                                         onClick={()=> handleClickBackup("add") }>+</button> 
                                         <button className={` px-3 py-2 rounded-lg
                                         ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> {stock_backup} </button>
+                                        <select onChange={(e)=> HandlerChangeLetter(e)}   value={backupLetter}
+                                              className={`text-sm px-2 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
+                                              <option value="A">A</option>
+                                              <option value="B">B</option>
+                                              <option value="C">C</option>
+                                              <option value="D">D</option>
+                                              <option value="E">E</option>
+                                            </select>
+                                            <select onChange={(e)=> HandlerChangeNumber(e)}  value={backupNumber}
+                                              className={`text-sm px-2 py-2 rounded-xl ${clickSelectNumber ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
+                                              <option value={item.shelf_number_backup_number}>{item.shelf_number_backup_number}</option>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                            </select>
                                         <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold mr-2 sm:mr-52"
                                         onClick={()=> handleClickBackup("rest") }>-</button>
                                         </div>
@@ -170,8 +210,28 @@ export const Product = ({item}) => {
                                           <div className='flex flex-row'>
                                             <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  hover:bg-yellow-400 sm:text-xl lg:text-4xl"
                                             onClick={()=> handleClickBackup("add") }>+</button> 
+                                          
                                             <button className={` px-3 py-2 rounded-lg
-                                            ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}>Backup {shelf_number_backup} Stock {stock_backup}  </button>
+                                            ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> Backstock {item.stock_backup}  shelf: #</button>
+                                          
+                                            <select onChange={(e)=> HandlerChangeLetter(e)}   value={backupLetter}
+                                              className={`text-2xl px-4 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
+                                              <option value="A">A</option>
+                                              <option value="B">B</option>
+                                              <option value="C">C</option>
+                                              <option value="D">D</option>
+                                              <option value="E">E</option>
+                                            </select>
+                                            <select onChange={(e)=> HandlerChangeNumber(e)}  value={backupNumber}
+                                              className={`text-2xl px-4 py-2 rounded-xl ${clickSelectNumber ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
+                                              <option value={item.shelf_number_backup_number}>{item.shelf_number_backup_number}</option>
+                                              <option value="1">1</option>
+                                              <option value="2">2</option>
+                                              <option value="3">3</option>
+                                              <option value="4">4</option>
+                                              <option value="5">5</option>
+                                            </select>
+                                            
                                             <button className="text-white px-4 py-2 rounded-lg bg-pink-400 font-bold  hover:bg-yellow-400 sm:text-xl lg:text-4xl"
                                             onClick={()=> handleClickBackup("rest") }>-</button>
                                           </div>
