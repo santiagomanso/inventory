@@ -152,7 +152,7 @@ export const Product = ({item}) => {
                                         <button className={` px-3 py-2 rounded-lg
                                         ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> {stock_backup} </button>
                                         <select onChange={(e)=> HandlerChangeLetter(e)}   value={backupLetter}
-                                              className={`text-sm px-2 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
+                                              className={` px-2 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold px-4 py-2 rounded-xl`}>
                                               <option value="A">A</option>
                                               <option value="B">B</option>
                                               <option value="C">C</option>
@@ -160,7 +160,7 @@ export const Product = ({item}) => {
                                               <option value="E">E</option>
                                             </select>
                                             <select onChange={(e)=> HandlerChangeNumber(e)}  value={backupNumber}
-                                              className={`text-sm px-2 py-2 rounded-xl ${clickSelectNumber ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold text-2xl px-4 py-2 rounded-xl`}>
+                                              className={` px-2 py-2 rounded-xl ${clickSelectNumber ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold px-4 py-2 rounded-xl`}>
                                               <option value={item.shelf_number_backup_number}>{item.shelf_number_backup_number}</option>
                                               <option value="1">1</option>
                                               <option value="2">2</option>
