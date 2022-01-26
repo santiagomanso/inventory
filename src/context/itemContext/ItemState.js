@@ -43,7 +43,7 @@ const ItemState = props => {
         // console.log("String recibido en funcion searchItems:  ", input);
         try {
             
-            const result = await axiosClient.get('/api/products', { params: { sku: input } })
+            const result = await axiosClient.get('/api/products', { params: { ean: input } })
                 dispatch({
                     type: SEARCH_ITEMS,
                     payload: result.data

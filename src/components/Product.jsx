@@ -117,15 +117,16 @@ export const Product = ({item}) => {
 
                                 {/* START RESPONSIVE (SMARTPHONE) */}
                                     <div className="flex flex-col sm:hidden justify-center sm:items-center w-screen"> 
-                                      <div>
+                                      <div className='mt-1'>
                                           <p className="probando"> {name} </p>
                                       </div>
                                       <div className="flex justify-center items-center"> 
-                                        <p className="mr-2 ">{sku} </p>
+                                        <p className="mr-2"> SKU:</p>
+                                        <p>{sku}</p>
                                         
                                         <button className="
                                         text-gray-500
-                                        px-1 py-1 ml-2 rounded-lg bg-slate-300 font-bold mr-2 sm:mr-52">Total Stock: {stock_total} </button>
+                                        px-1 py-1 ml-2 rounded-lg bg-slate-300 font-bold mr-2 sm:mr-52 cursor-default">Total Stock: {stock_total} </button>
                                       </div>
                                       <div className='flex flex-row justify-around'>
                                         <div className='flex'>
@@ -133,45 +134,54 @@ export const Product = ({item}) => {
                                           <p>{shelf_number}</p>
                                         </div>
                                         <div className='flex'>
-                                          <p className='font-bold text-gray-700'>Backup Shelf</p>
+                                          <p className='font-bold text-gray-700'>Backup Stock</p>
                                         </div>
                                       </div>
                                       <div className='flex justify-around pb-2'>
                                         <div className='flex justify-center items-center'>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400                                        font-bold sm:mr-52"
+
+                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold sm:mr-52"
                                         onClick={()=> handleClickShelf("add") }>+</button> 
+
                                         <button className={` px-3 py-2 rounded-lg
-                                         ${clickShelf ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> {stock_shelf} </button>
+                                         ${clickShelf ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'}  cursor-default`}> {stock_shelf} </button>
+
                                         <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold mr-2 sm:mr-52"
                                         onClick={()=> handleClickShelf("rest") }>-</button>
-                                        </div>
+
+                                      </div>
 
                                         <div>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold  sm:mr-52"
-                                        onClick={()=> handleClickBackup("add") }>+</button> 
-                                        <button className={` px-3 py-2 rounded-lg
-                                        ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'} `}> {stock_backup} </button>
-                                        <select onChange={(e)=> HandlerChangeLetter(e)}   value={backupLetter}
-                                              className={` px-2 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold px-4 py-2 rounded-xl`}>
-                                              <option value="A">A</option>
-                                              <option value="B">B</option>
-                                              <option value="C">C</option>
-                                              <option value="D">D</option>
-                                              <option value="E">E</option>
-                                            </select>
-                                            <select onChange={(e)=> HandlerChangeNumber(e)}  value={backupNumber}
-                                              className={` px-2 py-2 rounded-xl ${clickSelectNumber ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold px-4 py-2 rounded-xl`}>
-                                              <option value={item.shelf_number_backup_number}>{item.shelf_number_backup_number}</option>
-                                              <option value="1">1</option>
-                                              <option value="2">2</option>
-                                              <option value="3">3</option>
-                                              <option value="4">4</option>
-                                              <option value="5">5</option>
-                                            </select>
-                                        <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold mr-2 sm:mr-52"
-                                        onClick={()=> handleClickBackup("rest") }>-</button>
+                                          <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold  sm:mr-52"
+                                          onClick={()=> handleClickBackup("add") }>+</button> 
+                                          
+                                          <button className={` px-3 py-2 rounded-lg
+                                          ${clickBackup ?'bg-teal-500 text-white font-bold' : 'text-gray-500 bg-gray-300 font-bold'}  cursor-default`}> {stock_backup} </button>
+                                          
+                                          <button className="text-white px-4 py-2 rounded-lg bg-pink-400 hover:bg-yellow-400 font-bold mr-2 sm:mr-52"
+                                          onClick={()=> handleClickBackup("rest") }>-</button>
                                         </div>
                                                                                
+                                      </div>
+                                      <div>
+                                      <p className='font-bold text-gray-700'>Backstock Shelf</p>
+                                          <select onChange={(e)=> HandlerChangeLetter(e)}   value={backupLetter}
+                                          className={` px-2 py-2 rounded-xl ${clickSelectLetter ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold px-4 py-2 rounded-lg cursor-pointer`}>
+                                          <option value="A">A</option>
+                                          <option value="B">B</option>
+                                          <option value="C">C</option>
+                                          <option value="D">D</option>
+                                          <option value="E">E</option>
+                                        </select>
+                                        <select onChange={(e)=> HandlerChangeNumber(e)}  value={backupNumber}
+                                          className={` px-2 py-2 rounded-xl ${clickSelectNumber ? 'bg-teal-500 text-white' : 'text-gray-500 bg-gray-300'} font-bold px-4 py-2 rounded-lg mb-3 cursor-pointer`}>
+                                          <option value={item.shelf_number_backup_number}>{item.shelf_number_backup_number}</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                        </select>
                                       </div>
                                     </div>
                                  {/* END RESPONSIVE (SMARTPHONE) */}
