@@ -18,9 +18,12 @@
   <body>
     
     <script>
-      window.addEventListener("click", (function(event) {
+      //this script is meant to put the app on fullscreen on some mobile devices but not on the main computer on the warehouse
+      if (screen.width <= 480) {
+        window.addEventListener("click", (function(event) {
         document.documentElement.requestFullscreen().catch((e) => {console.log(e)})
       }));
+      }
     </script>
  
     <noscript>You need to enable JavaScript to run this app.</noscript>
